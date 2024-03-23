@@ -1,0 +1,7 @@
+{
+  "name": "cmdrequest",
+  "description": "Handle http request without browser limitations",
+  "path": "HOME_DIR/cmdrequest.py",
+  "type": "stdio",
+  "allowed_extensions": ["tradingview_symbols_extension@digital.ocean.net"]
+}

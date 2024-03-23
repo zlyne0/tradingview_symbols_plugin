@@ -1,0 +1,24 @@
+@startuml
+actor User as User
+entity Plugin as Plugin
+entity TradingView as TradingView
+
+note over User: create group
+
+User -> TradingView : put symbols
+User -> Plugin : save symbols as group
+
+activate Plugin
+Plugin -> TradingView : fetch symbols
+Plugin -> Plugin: save symbols as group in storage
+deactivate Plugin
+
+note over User: upload group\nsymbols to trading view
+
+User -> Plugin : push to TradingView request
+activate Plugin
+Plugin -> Plugin: load symbols from storage
+Plugin -> TradingView : update symbols in tradingview
+deactivate Plugin
+
+@enduml

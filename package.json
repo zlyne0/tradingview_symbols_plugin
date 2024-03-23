@@ -1,0 +1,21 @@
+{
+  "name": "tradingview_symbols_extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "AMO_JWT_ISSUER": "xxx",
+    "AMO_JWT_SECRET": "xxx"
+  },
+  "scripts": {
+    "install:cmdrequest": "chmod a+x install_cmdrequest.sh && ./install_cmdrequest.sh",
+    "build": "npx web-ext sign -s ./src/ -a . --api-key=\"$npm_package_config_AMO_JWT_ISSUER\" --api-secret=\"$npm_package_config_AMO_JWT_SECRET\"",
+    "start:firefox": "npx web-ext run --source-dir ./src/"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "web-ext": "^7.2.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "tradingview symbols extension",
+  "version": "1.0.1",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tradingview_symbols_extension@digital.ocean.net"
+    }
+  },
+
+  "description": "Plugin allow bypass tradingview restriction to hava limited number of watchlist symbols. It's bypass by keep symbols in plugin and push it to tradingview",
+
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon-48.png"
+    },
+    "default_title": "tradingview symbols extension"
+  },
+
+  "background": {
+    "scripts": ["background_script.js"],
+    "persistent": true,
+    "type": "module"
+  },
+
+  "permissions": ["cookies" ,"webRequest", "<all_urls>", "storage", "tabs", "nativeMessaging"],
+
+  "content_security_policy": "script-src 'self' https://www.tradingview.com; object-src 'self'"
+
+}
+
